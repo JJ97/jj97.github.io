@@ -308,7 +308,7 @@
 
         mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
 
-        var lighting = document.getElementById("lighting").checked;
+        var lighting = true;
         gl.uniform1i(shaderProgram.useLightingUniform, lighting);
         if (lighting) {
             gl.uniform3f(
