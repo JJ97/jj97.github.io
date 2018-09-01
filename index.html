@@ -212,7 +212,7 @@
 
 
     function rotate() {
-        var deltaX = 0.5;
+        var deltaX = 1.0;
         var newRotationMatrix = mat4.create();
         mat4.identity(newRotationMatrix);
         mat4.rotate(newRotationMatrix, degToRad(deltaX / 10), [0, 1, 0]);
