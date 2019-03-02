@@ -1,5 +1,5 @@
-function main(){
-  let audio = document.getElementById("tunez");
-  audio.play();
-}
-window.onload = main;
+document.addEventListener('readystatechange', event => {
+  if (event.target.readyState === "complete") {
+    document.getElementById("tunez").play();
+  }
+});
