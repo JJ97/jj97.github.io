@@ -3,7 +3,7 @@ document.addEventListener('readystatechange', event => {
     let tunez = document.getElementById("tunez");
     const playPromise = tunez.play();
     if (playPromise !== null){
-        playPromise.catch(() => { tunez.play(); })
+        playPromise.catch()
     }
   }
 });
