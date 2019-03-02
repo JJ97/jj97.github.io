@@ -24,6 +24,6 @@ window.onload = () => {
     actualPage.classList.remove("invisible");
     tunez.play();
     ev.preventDefault();
-    setInterval(checkEdge, 15);
+    // setInterval(checkEdge, 15);
   }
 }
