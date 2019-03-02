@@ -1,9 +1,13 @@
-document.addEventListener('readystatechange', event => {
-  if (event.target.readyState === "complete") {
-    let tunez = document.getElementById("tunez");
-    const playPromise = tunez.play();
-    if (playPromise !== null){
-        playPromise.catch()
-    }
+window.onload = () => {
+  const enterDiv = document.getElementById('enter');
+  const enterLink = document.querySelector('#enter a');
+  const actualPage = document.getElementById('actual-page');
+  const tunez = document.getElementById("tunez");
+  
+  enterLink.onclick = (ev) => {
+    enterDiv.classList.add("hidden");
+    actualPage.classList.remove("invisible");
+    tunez.play();
+    ev.preventDefault();
   }
-});
+}
