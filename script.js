@@ -6,6 +6,16 @@ window.onload = () => {
   const actualPage = document.getElementById('actual-page');
   const tunez = document.getElementById("tunez");
   const bouncebox = document.getElementById("bouncebox");
+  
+  let info = Array.from(bouncebox.childNodes).filter(function(v, i) {
+    return i % 2 == 1;
+  });
+
+  function newInfo(){
+    if (info.length === 0) { return; }
+    let toReveal = info.shift();
+    toReveal.classList.remove("invisible");
+  }
 
   function checkEdge(){
     const wiggle = 8;
@@ -14,16 +24,18 @@ window.onload = () => {
         rect.bottom >= window.innerHeight - wiggle ||
         rect.left <= wiggle ||
         rect.right >= window.innerWidth - wiggle){
-      let newColor = htmlColours[Math.floor(Math.random() * htmlColours.length)];
-      bouncebox.style.color = newColor;
+      // let newColor = htmlColours[Math.floor(Math.random() * htmlColours.length)];
+      // bouncebox.style.color = newColor;
+      newInfo();
     }
   }
   
   enterLink.onclick = (ev) => {
     enterDiv.classList.add("hidden");
-    actualPage.classList.remove("invisible");
+    newInfo();
     tunez.play();
     ev.preventDefault();
-    // setInterval(checkEdge, 15);
+    setInterval(checkEdge, 20);
   }
 }
+

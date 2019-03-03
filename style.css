@@ -2,13 +2,17 @@
   display: none;
 }
 .invisible {
-  color: white;
+  color: white; 
+}
+.invisible a{
+  color: white; 
 }
 #enter {
   text-align: center;
   height: 100%;
 }
 #enter a {
+  font-size: 18px;
   position: relative;
   top: 50%;
 }
